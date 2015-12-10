@@ -1,0 +1,887 @@
+Last login: Wed Dec  9 14:30:20 on ttys001
+users-MacBook-Pro-147:~ user$ cd Desktop
+users-MacBook-Pro-147:Desktop user$ unzip Challenge01.zip
+unzip:  cannot find or open Challenge01.zip, Challenge01.zip.zip or Challenge01.zip.ZIP.
+users-MacBook-Pro-147:Desktop user$ ls
+Challenge_1.zip	SomeDir
+users-MacBook-Pro-147:Desktop user$ unzip Challenge_1.zip
+Archive:  Challenge_1.zip
+   creating: Challenge_1/
+  inflating: Challenge_1/.DS_Store   
+   creating: __MACOSX/
+   creating: __MACOSX/Challenge_1/
+  inflating: __MACOSX/Challenge_1/._.DS_Store  
+   creating: Challenge_1/Empty_Folder/
+   creating: Challenge_1/Text_Files/
+  inflating: Challenge_1/Text_Files/.DS_Store  
+   creating: __MACOSX/Challenge_1/Text_Files/
+  inflating: __MACOSX/Challenge_1/Text_Files/._.DS_Store  
+  inflating: Challenge_1/Text_Files/Less_Text.txt  
+  inflating: __MACOSX/Challenge_1/Text_Files/._Less_Text.txt  
+  inflating: Challenge_1/Text_Files/More_Text.txt  
+  inflating: __MACOSX/Challenge_1/Text_Files/._More_Text.txt  
+  inflating: __MACOSX/Challenge_1/._Text_Files  
+  inflating: __MACOSX/._Challenge_1  
+users-MacBook-Pro-147:Desktop user$ cd Challenge_1
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Empty_Folder	Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ mkdir New
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Empty_Folder	New		Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ touch newFile
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Empty_Folder	New		Text_Files	newFile
+users-MacBook-Pro-147:Challenge_1 user$ mv newFile /New/newFile
+mv: rename newFile to /New/newFile: No such file or directory
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Empty_Folder	New		Text_Files	newFile
+users-MacBook-Pro-147:Challenge_1 user$ mv newFile ../New/newFile
+mv: rename newFile to ../New/newFile: No such file or directory
+users-MacBook-Pro-147:Challenge_1 user$ mv newFile ./New/newFile
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Empty_Folder	New		Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ pwd
+/Users/user/Desktop/Challenge_1
+users-MacBook-Pro-147:Challenge_1 user$ cd Text_Files
+users-MacBook-Pro-147:Text_Files user$ ls
+Less_Text.txt	More_Text.txt
+users-MacBook-Pro-147:Text_Files user$ cd .
+users-MacBook-Pro-147:Text_Files user$ cd ..
+users-MacBook-Pro-147:Challenge_1 user$ man kkdir
+No manual entry for kkdir
+users-MacBook-Pro-147:Challenge_1 user$ man mkdir
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Empty_Folder	New		Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ man mkdir
+users-MacBook-Pro-147:Challenge_1 user$ mkdir -p Foo Bar folders
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Bar		Foo		Text_Files
+Empty_Folder	New		folders
+users-MacBook-Pro-147:Challenge_1 user$ rmdir Foo
+users-MacBook-Pro-147:Challenge_1 user$ rmdir Bar
+users-MacBook-Pro-147:Challenge_1 user$ rmdir folders
+users-MacBook-Pro-147:Challenge_1 user$ man mkdir
+users-MacBook-Pro-147:Challenge_1 user$ mkdir -pv Foo Bar folders
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Bar		Foo		Text_Files
+Empty_Folder	New		folders
+users-MacBook-Pro-147:Challenge_1 user$ rmdir Foo
+users-MacBook-Pro-147:Challenge_1 user$ rmdir Bar
+users-MacBook-Pro-147:Challenge_1 user$ rmdir folders
+users-MacBook-Pro-147:Challenge_1 user$ mkdir -p Foo/Bar/folders
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Empty_Folder	Foo		New		Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ ls -l
+total 0
+drwxr-xr-x@ 2 user  staff   68 16 Feb  2015 Empty_Folder
+drwxr-xr-x  3 user  staff  102  9 Dec 17:47 Foo
+drwxr-xr-x  3 user  staff  102  9 Dec 17:40 New
+drwxr-xr-x@ 5 user  staff  170 16 Feb  2015 Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ rmdir Empty_Folder
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Foo		New		Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ rmdir New
+rmdir: New: Directory not empty
+users-MacBook-Pro-147:Challenge_1 user$ rm -r New
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Foo		Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ cd Text_Files
+users-MacBook-Pro-147:Text_Files user$ cp More_Text Learn_to_code
+cp: More_Text: No such file or directory
+users-MacBook-Pro-147:Text_Files user$ cp ./More_Text Learn_to_code
+cp: ./More_Text: No such file or directory
+users-MacBook-Pro-147:Text_Files user$ ls
+Less_Text.txt	More_Text.txt
+users-MacBook-Pro-147:Text_Files user$ cp ./More_Text.txt Learn_to_code
+users-MacBook-Pro-147:Text_Files user$ ls
+Learn_to_code	Less_Text.txt	More_Text.txt
+users-MacBook-Pro-147:Text_Files user$ head -5 Learn_to_code
+Why is Learning to Code So Hard?
+
+December 2012
+
+Why can some people learn how to code with relative ease, yet others fail? Why do some people graduate with a computer science degree yet struggle when they get on the job? Are software developers somehow genetically superior? Or can it be learned? If we tried to revolutionise how people learn to code, could we do it?
+users-MacBook-Pro-147:Text_Files user$ tail -5 Learn_to_code
+If you’d like to learn more about the research and the programming academy that we’re building on top of it, check out MakersAcademy.com and/or email me at rob@makersacademy.com.
+
+Follow me on Twitter @startuprob
+
+I discuss this concept in my essay on Persistence. ↩users-MacBook-Pro-147:Text_Files user$ less Learn_to_code
+users-MacBook-Pro-147:Text_Files user$ touch blank
+users-MacBook-Pro-147:Text_Files user$ grep a Learn_to_code
+Why is Learning to Code So Hard?
+Why can some people learn how to code with relative ease, yet others fail? Why do some people graduate with a computer science degree yet struggle when they get on the job? Are software developers somehow genetically superior? Or can it be learned? If we tried to revolutionise how people learn to code, could we do it?
+These are a few of the questions I used as a starting point to explore how people learn to code.
+Demand for software developers is high. Starting salaries are high. The future for a skilled developer has never been brighter.
+Today we have more learning resources available than ever before. Almost all Universities teach computer science. With the expansion of “everywhere education” we can access world-class content for free on sites like iTunesU, Coursera and Udacity. We have phenomenal resources for the “teach yourself” programmer such as Michael Hartl’s Ruby on Rails tutorial and Railscasts. We’ve even seen the utilisation of cutting edge web technologies to teach in-the-browser programming from sites like CodeAcademy and CodeSchool.
+But despite the selection of resources and the incentives to learn, there are still many people who try to teach themselves how to program and fail.
+The Failing Points
+I first interviewed a large number of people who have attempted to learn how to program, but failed somewhere along the way. I asked them questions to determine where, when and what material they were on when they decided to abandon the process. A lot of great information was gained through this process, but four points contributed to nearly every person’s decision to give up:
+Help sections aren’t – A novice developer using the help section is similar to someone learning German using a native German dictionary to figure out the meaning of a word. It can work, but it’s far from optimal. The terminology is simply too confusing.
+Sudden leap in difficulty – Nearly everyone noted that at some point in their learning they stumbled upon a sudden leap in difficulty that crippled their ability to grasp the follow-on concepts. The interesting thing was that this leap in difficulty was different for just about every student.
+Inconsistent learning – Trying to learn how to program in 20 minutes every other evening doesn’t cut it. Similar to elementary school where each week’s algebra work required that you understood the previous week’s principles, software development highly builds on previous concepts. If you spend too much time between reinforcement, learning gets significantly more difficult.
+Projects that aren’t engaging – Many people couldn’t keep their motivation because who really wants to code another to-do list?
+After seeing where people were failing, I contacted the best developers I knew in London and asked them who were the best five developers that they knew. From this I got a sizeable list of experts to interview.
+I asked each of these experts a variety of questions ranging from where they saw beginners wasting the most time to what they personally did, and continue to do, to maintain their coding prowess.
+Here are a couple of the more material points that came out:
+Too many developers want to stay in their comfort zone. They try to bend whatever language or framework they know best to the problem at hand. This makes perfect sense if we think about it – people want to feel good about themselves and being good at something provides that feeling.1
+While none of the experts explicitly stated it, I noticed that every developer I talked to stayed with the questions I asked longer than the average person would have. Instead of just blurting out the first thing that came to their mind, many of them would silently sit and look up into the corner of the room for 1-2 minutes thoroughly pensive about the question at hand. I hypothesise that this reticence to jump at the first thing that comes to mind is directly correlated to their success in programming. Many novices take the trial-and-error approach to every problem and while that can be useful, it’s not always the best tool for the job. In addition, this thorough and patient exploration of a problem likely also correlates to their stick-with-it-ness that is so prevalent and near-universally agreed to be a primary indicator of great hackers.
+Lastly, I explored how developers spend their time on the job. Most tasks fell into one of four time slots:
+Fixing bugs and making minor changes to an existing code base
+Adding new features to an existing code base
+Writing new software from scratch
+Refactoring (making a material architectural change to a code base without changing the functionality – very difficult)
+Editing an existing code base is what most entry-level programmers will do in a new position.
+While the research is far from completed, I couldn’t be more excited about how to use this information to try and improve upon existing ways of learning how to code. Some of the revelations are a complete mystery on how to efficiently implement them into a new style of learning, while others provide clear clues on how to make the process more efficient. Some easy wins for anyone who wants to learn how to code:
+Commit – A few minutes here and there isn’t going to work no matter how you’re learning. If you want to learn how to code, commit to it.
+Use a mentor – Find an experienced developer who is willing to sit with you for even 30 minutes per week. You should be conducting much more than 30 minutes per week of self-study, but the 30 minutes of pair programming with an expert can provide significant improvements in the learning process. (Contact me if you’re interested in being a mentor or being mentored.)
+Build your own projects – Constantly bouncing from tutorial to tutorial can be useful to learn concepts, but the quicker you begin building your own projects the better. Exclusively using tutorials to learn is like someone who wants to be a chef but only uses recipes. It may show you how to make that exact dish, but the knowledge of the underlying concepts is where the true learning will come.
+Review others’ code – If you use a tutorial to learn a concept, go to GitHub and find some places where people have used that concept in an actual project.
+If you’d like to learn more about the research and the programming academy that we’re building on top of it, check out MakersAcademy.com and/or email me at rob@makersacademy.com.
+Follow me on Twitter @startuprob
+I discuss this concept in my essay on Persistence. ↩
+users-MacBook-Pro-147:Text_Files user$ ls "*.txt"
+ls: *.txt: No such file or directory
+users-MacBook-Pro-147:Text_Files user$ ls *.txt
+Less_Text.txt	More_Text.txt
+users-MacBook-Pro-147:Text_Files user$ man wc
+users-MacBook-Pro-147:Text_Files user$ wc -l Learn_to_code
+      56 Learn_to_code
+users-MacBook-Pro-147:Text_Files user$ wc -w Learn_to_code
+    1118 Learn_to_code
+users-MacBook-Pro-147:Text_Files user$ ls | grep *.txt | wc -l
+       0
+users-MacBook-Pro-147:Text_Files user$ ls | grep *.txt | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls | grep "*.txt" | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls | grep "*.txt"
+users-MacBook-Pro-147:Text_Files user$ ls | grep *.txt | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls 
+Learn_to_code	Less_Text.txt	More_Text.txt	blank
+users-MacBook-Pro-147:Text_Files user$ man ls
+users-MacBook-Pro-147:Text_Files user$ ls | grep *.txt | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls | grep "*.tx"t | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls | grep "*.txt" | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls -l | grep "*.txt" | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ find . -name "*" | grep *.txt | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls
+Learn_to_code	Less_Text.txt	More_Text.txt	blank
+users-MacBook-Pro-147:Text_Files user$ ls | grep *.txt | wc
+       0       0       0
+users-MacBook-Pro-147:Text_Files user$ ls | grep -c  *.txt
+0
+users-MacBook-Pro-147:Text_Files user$ ls -l | grep -c  *.txt
+0
+users-MacBook-Pro-147:Text_Files user$ ls | grep .txt | wc -l
+       2
+users-MacBook-Pro-147:Text_Files user$ find ~ -name "b*" -print
+/Users/user/.atom/compile-cache/js/babel
+/Users/user/.gem/specs/api.rubygems.org%443/quick/Marshal.4.8/builder-3.2.2.gemspec
+/Users/user/.gem/specs/api.rubygems.org%443/quick/Marshal.4.8/bundler-1.10.6.gemspec
+/Users/user/.rvm/archives/bin-ruby-2.2.1.tar.bz2
+/Users/user/.rvm/bin
+/Users/user/.rvm/gems/ruby-2.2.1/bin
+/Users/user/.rvm/gems/ruby-2.2.1/bin/bundle
+/Users/user/.rvm/gems/ruby-2.2.1/bin/bundler
+/Users/user/.rvm/gems/ruby-2.2.1/build_info
+/Users/user/.rvm/gems/ruby-2.2.1/cache/builder-3.2.2.gem
+/Users/user/.rvm/gems/ruby-2.2.1/cache/bundler-1.10.6.gem
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionmailer-4.2.4/lib/action_mailer/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/abstract_controller/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_controller/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/journey/backwards.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/journey/gtg/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/journey/nfa/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionview-4.2.4/lib/action_view/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionview-4.2.4/lib/action_view/buffers.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionview-4.2.4/lib/action_view/helpers/tags/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/actionview-4.2.4/lib/action_view/template/handlers/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activejob-4.2.4/lib/active_job/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activejob-4.2.4/lib/active_job/queue_adapters/backburner_adapter.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/associations/belongs_to_association.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/associations/belongs_to_polymorphic_association.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/associations/builder
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/associations/builder/belongs_to.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/associations/preloader/belongs_to.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/attribute_methods/before_type_cast.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/attribute_set/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql/oid/bit.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql/oid/bit_varying.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql/oid/bytea.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/relation/batches.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/type/big_integer.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/type/binary.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.4/lib/active_record/type/boolean.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/backtrace_cleaner.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/benchmarkable.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/core_ext/benchmark.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/core_ext/big_decimal
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/core_ext/big_decimal.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/core_ext/numeric/bytes.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/core_ext/object/blank.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/core_ext/string/behavior.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.4/lib/active_support/deprecation/behaviors.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/arel-6.0.3/lib/arel/collectors/bind.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/arel-6.0.3/lib/arel/nodes/binary.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/arel-6.0.3/lib/arel/nodes/bind_param.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/arel-6.0.3/lib/arel/visitors/bind_substitute.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/arel-6.0.3/lib/arel/visitors/bind_visitor.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2/doc/releases/builder-1.2.4.rdoc
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2/doc/releases/builder-2.0.0.rdoc
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2/doc/releases/builder-2.1.1.rdoc
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2/lib/blankslate.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2/lib/builder
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2/lib/builder/blankslate.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/builder-3.2.2/lib/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/bin/bundle
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/bin/bundle_ruby
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/bin/bundler
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/bundler.gemspec
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/cli/binstubs.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/fetcher/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-config
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-config.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-exec
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-exec.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-install
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-install.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-package
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-package.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-platform
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-platform.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-update
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle-update.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/man/bundle.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/templates/newgem/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/vendor/thor/lib/thor/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/vendor/thor/lib/thor/line_editor/basic.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler/vendor/thor/lib/thor/shell/basic.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/lib/bundler.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/man/bundle-config.ronn
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/man/bundle-exec.ronn
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/man/bundle-install.ronn
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/man/bundle-package.ronn
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/man/bundle-platform.ronn
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/man/bundle-update.ronn
+/Users/user/.rvm/gems/ruby-2.2.1/gems/bundler-1.10.6/man/bundle.ronn
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/benchmark
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/benchmark/bench.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/benchmark/bench_context.yaml
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/benchmark/templates/bench_erb.rhtml
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/benchmark/templates/bench_erubis.rhtml
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/benchmark/templates/bench_eruby.rhtml
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/examples/basic
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/test/data/users-guide/bipattern-example.rhtml
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/test/data/users-guide/bipattern_example.result
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/test/data/users-guide/bufvar-example.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/erubis-2.7.0/test/data/users-guide/bufvar-example.result
+/Users/user/.rvm/gems/ruby-2.2.1/gems/i18n-0.7.0/lib/i18n/backend
+/Users/user/.rvm/gems/ruby-2.2.1/gems/i18n-0.7.0/lib/i18n/backend/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/i18n-0.7.0/lib/i18n/backend.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/i18n-0.7.0/lib/i18n/tests/basics.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/i18n-0.7.0/test/backend
+/Users/user/.rvm/gems/ruby-2.2.1/gems/i18n-0.7.0/test/gettext/backend_test.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/loofah-2.0.3/benchmark
+/Users/user/.rvm/gems/ruby-2.2.1/gems/loofah-2.0.3/benchmark/benchmark.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/mail-2.6.3/lib/mail/body.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/mail-2.6.3/lib/mail/encodings/base64.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/mail-2.6.3/lib/mail/encodings/binary.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/mail-2.6.3/lib/mail/fields/bcc_field.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/mail-2.6.3/lib/mail/network/retriever_methods/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/mime-types-2.6.2/support/benchmarks
+/Users/user/.rvm/gems/ruby-2.2.1/gems/mime-types-2.6.2/test/bad-fixtures
+/Users/user/.rvm/gems/ruby-2.2.1/gems/minitest-5.8.1/lib/minitest/benchmark.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/build_all
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/lib/nokogiri/html/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/lib/nokogiri/xml/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/test/files/bar
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/test/files/bar/bar.xsd
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/test/files/bogus.xml
+/Users/user/.rvm/gems/ruby-2.2.1/gems/nokogiri-1.6.6.2/test/files/test_document_url/bar.xml
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/auth/basic.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/backports
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/body_proxy.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/builder.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/test/builder
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/test/multipart/bad_robots
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/test/multipart/binary
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-test-0.6.3/spec/fixtures/bar.txt
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rack-test-0.6.3/spec/support/matchers/body.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rails-4.2.4/guides/assets/images/belongs_to.png
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rails-4.2.4/guides/assets/images/book_icon.gif
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rails-4.2.4/guides/assets/images/bullet.gif
+/Users/user/.rvm/gems/ruby-2.2.1/gems/rails-4.2.4/guides/bug_report_templates
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/application/bootstrap.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/backtrace_cleaner.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/rails/app/templates/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/rails/app/templates/bin/bundle
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/rails/app/templates/config/boot.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/rails/app/templates/config/initializers/backtrace_silencers.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/rails/plugin/templates/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/rails/plugin/templates/rails/boot.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/generators/testing/behaviour.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/sprockets-3.4.0/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/sprockets-3.4.0/lib/sprockets/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/sprockets-3.4.0/lib/sprockets/bower.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/sprockets-3.4.0/lib/sprockets/bundle.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/bin
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/lib/thor/base.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/lib/thor/line_editor/basic.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/lib/thor/shell/basic.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/spec/base_spec.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/spec/fixtures/bundle
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/spec/fixtures/doc/block_helper.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/spec/line_editor/basic_spec.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/spec/sandbox/bundle
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/spec/sandbox/doc/block_helper.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thor-0.19.1/spec/shell/basic_spec.rb
+/Users/user/.rvm/gems/ruby-2.2.1/gems/thread_safe-0.3.5/examples/bench_cache.rb
+/Users/user/.rvm/gems/ruby-2.2.1/specifications/builder-3.2.2.gemspec
+/Users/user/.rvm/gems/ruby-2.2.1/specifications/bundler-1.10.6.gemspec
+/Users/user/.rvm/gems/ruby-2.2.1/wrappers/bundle
+/Users/user/.rvm/gems/ruby-2.2.1/wrappers/bundler
+/Users/user/.rvm/patches/ruby/1.8.4/backported-ossl-fixes.diff
+/Users/user/.rvm/patches/ruby/1.8.5/backported-ossl-fixes.diff
+/Users/user/.rvm/patches/ruby/1.9.1/p431/backport-2404.patch
+/Users/user/.rvm/patches/ruby/1.9.3/p429/bsd-shell-fix.patch
+/Users/user/.rvm/patches/ruby/2.0.0/broken_stack_protector.patch
+/Users/user/.rvm/rubies/ruby-2.2.1/bin
+/Users/user/.rvm/rubies/ruby-2.2.1/include/ruby-2.2.0/ruby/backward
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/base64.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/bigdecimal
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/json/add/bigdecimal.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/net/http/backward.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/openssl/bn.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/openssl/buffering.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rake/backtrace.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/generator/template/darkfish/images/brick.png
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/generator/template/darkfish/images/brick_link.png
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/generator/template/darkfish/images/bug.png
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/generator/template/darkfish/images/bullet_black.png
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/generator/template/darkfish/images/bullet_toggle_minus.png
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/generator/template/darkfish/images/bullet_toggle_plus.png
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/markup/blank_line.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/markup/block_quote.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rdoc/rd/block_parser.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rexml/parsers/baseparser.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rss/maker/base.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rubygems/basic_specification.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rubygems/commands/build_command.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rubygems/ext/build_error.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rubygems/ext/builder.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/rubygems/resolver/best_set.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/shell/builtin-command.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpauth/basicauth.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/xmlrpc/base64.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/bin
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/build_info
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/cache/bundler-unload-1.0.2.gem
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/bundler-unload-1.0.2
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/bundler-unload-1.0.2/bundler-unload.gemspec
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/bundler-unload-1.0.2/lib/bundler-unload
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/bundler-unload-1.0.2/lib/bundler-unload.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/executable-hooks-1.3.2/bin
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/rake-10.4.2/bin
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/rdoc-4.2.0/bin
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/rubygems-bundler-1.4.4/test/dtf/binary_comment_test.sh
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/rubygems-bundler-1.4.4/test/dtf/bundler_comment_test.sh
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/specifications/bundler-unload-1.0.2.gemspec
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/specifications/default/bigdecimal-1.2.6.gemspec
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/wrappers/b2json
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/wrappers/bayes.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/wrappers/bundle
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/wrappers/bundler
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/wrappers/byebug
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/basic_specification.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/commands/build_command.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/ext/build_error.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/ext/builder.rb
+/Users/user/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/resolver/best_set.rb
+/Users/user/.rvm/scripts/base
+/Users/user/.rvm/scripts/extras/bash_zsh_support
+/Users/user/.rvm/scripts/functions/build
+/Users/user/.rvm/scripts/functions/build_config
+/Users/user/.rvm/scripts/functions/build_config_system
+/Users/user/.rvm/scripts/functions/build_requirements
+/Users/user/.rvm/scripts/functions/build_requirements_helpers
+/Users/user/.rvm/scripts/functions/hooks/binstubs
+/Users/user/.rvm/scripts/functions/manage/base
+/Users/user/.rvm/scripts/functions/manage/base_fetch
+/Users/user/.rvm/scripts/functions/manage/base_install
+/Users/user/.rvm/scripts/functions/manage/base_install_patches
+/Users/user/.rvm/scripts/functions/manage/base_remove
+/Users/user/.rvm/src/rvm/bin
+/Users/user/.rvm/src/rvm/binscripts
+/Users/user/.rvm/src/rvm/patches/ruby/1.8.4/backported-ossl-fixes.diff
+/Users/user/.rvm/src/rvm/patches/ruby/1.8.5/backported-ossl-fixes.diff
+/Users/user/.rvm/src/rvm/patches/ruby/1.9.1/p431/backport-2404.patch
+/Users/user/.rvm/src/rvm/patches/ruby/1.9.3/p429/bsd-shell-fix.patch
+/Users/user/.rvm/src/rvm/patches/ruby/2.0.0/broken_stack_protector.patch
+/Users/user/.rvm/src/rvm/rvm-test-rvm1/bundler_cd_hook_comment_test.sh
+/Users/user/.rvm/src/rvm/scripts/base
+/Users/user/.rvm/src/rvm/scripts/extras/bash_zsh_support
+/Users/user/.rvm/src/rvm/scripts/functions/build
+/Users/user/.rvm/src/rvm/scripts/functions/build_config
+/Users/user/.rvm/src/rvm/scripts/functions/build_config_system
+/Users/user/.rvm/src/rvm/scripts/functions/build_requirements
+/Users/user/.rvm/src/rvm/scripts/functions/build_requirements_helpers
+/Users/user/.rvm/src/rvm/scripts/functions/hooks/binstubs
+/Users/user/.rvm/src/rvm/scripts/functions/manage/base
+/Users/user/.rvm/src/rvm/scripts/functions/manage/base_fetch
+/Users/user/.rvm/src/rvm/scripts/functions/manage/base_install
+/Users/user/.rvm/src/rvm/scripts/functions/manage/base_install_patches
+/Users/user/.rvm/src/rvm/scripts/functions/manage/base_remove
+/Users/user/.Trash/Atom.app/Contents/Frameworks/Atom Helper.app/Contents/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/asar-require/node_modules/asar/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/asar-require/node_modules/asar/node_modules/cuint/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/asar-require/node_modules/asar/node_modules/cuint/build.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/asar-require/node_modules/asar/node_modules/minimatch/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/asar-require/node_modules/asar/node_modules/minimatch/node_modules/brace-expansion
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/asar-require/node_modules/asar/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/asar-require/node_modules/asar/node_modules/mkdirp/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/first-mate/benchmark
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/first-mate/benchmark/bootstrap.css
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/first-mate/benchmark/bootstrap.min.css
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/first-mate/node_modules/emissary/lib/behavior.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/first-mate/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/array/#/binary-search.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/first-mate/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/boolean
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/first-mate/node_modules/oniguruma/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/fs-plus/node_modules/rimraf/bin.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/git-utils/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/keytar/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/mv/node_modules/ncp/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/mv/node_modules/rimraf/bin.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/ncp/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/lib/bin.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/lib/bugs.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/lib/build.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/block-stream
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/block-stream/bench
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/block-stream/bench/block-stream-pause.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/block-stream/bench/block-stream.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/block-stream/block-stream.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/dezalgo/node_modules/asap/browser-asap.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/dezalgo/node_modules/asap/browser-raw.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/minimatch/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/minimatch/node_modules/brace-expansion
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/mkdirp/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/gyp/buildbot
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/gyp/buildbot/buildbot_run.py
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/lib/build.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/minimatch/node_modules/sigmund/bench.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/path-array/node_modules/array-index/node_modules/debug/bower.json
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/path-array/node_modules/array-index/node_modules/debug/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/semver/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/node_modules/tar/lib/buffer-entry.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/nopt/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/npm-registry-client/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/npm-registry-client/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/build/build.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/npm-registry-client/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/read-package-json/node_modules/json-parse-helpfulerror/node_modules/jju/benchmark
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/read-package-json/node_modules/json-parse-helpfulerror/node_modules/jju/benchmark/benchmark.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/readable-stream/node_modules/isarray/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/readable-stream/node_modules/isarray/build/build.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/bl
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/bl/bl.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/build/build.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/util-deprecate/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/form-data/lib/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/har-validator/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/har-validator/node_modules/bluebird
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/har-validator/node_modules/bluebird/js/browser
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/har-validator/node_modules/bluebird/js/browser/bluebird.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/har-validator/node_modules/bluebird/js/browser/bluebird.min.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/har-validator/node_modules/bluebird/js/main/bind.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/har-validator/node_modules/bluebird/js/main/bluebird.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/hawk/bower.json
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/hawk/lib/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/images/boom.png
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/asn1/lib/ber
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/bench.gnu
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/bench.sh
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/benchmark-native.c
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/benchmark.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/node-uuid/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/node-uuid/bower.json
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/request/node_modules/qs/bower.json
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/rimraf/bin.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/semver/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/slide/lib/bind-actor.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/tar/lib/buffer-entry.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/validate-npm-package-name/node_modules/builtins
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/validate-npm-package-name/node_modules/builtins/builtins.json
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/which/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/q/benchmark
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/season/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/season/node_modules/cson-parser/node_modules/coffee-script/bin
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/season/node_modules/cson-parser/node_modules/coffee-script/bower.json
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/season/node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/browser.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/node_modules/temp/node_modules/rimraf/bin.js
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/templates/bundle
+/Users/user/.Trash/Atom.app/Contents/Resources/app/apm/templates/theme/styles/base.less
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/atom-keymap/node_modules/keyboard-layout/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/git-utils/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/nslog/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/oniguruma/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/pathwatcher/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/runas/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/scrollbar-style/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/spell-check/node_modules/spellchecker/build
+/Users/user/.Trash/Atom.app/Contents/Resources/app.asar.unpacked/node_modules/symbols-view/node_modules/ctags/build
+/Users/user/Desktop/Challenge_1/Text_Files/blank
+/Users/user/Library/Address Book Plug-Ins/SkypeABDialer.bundle/Contents/Resources/bg.lproj
+/Users/user/Library/Address Book Plug-Ins/SkypeABSMS.bundle/Contents/Resources/bg.lproj
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/branches-button-highlighted.tiff
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/branches-button.tiff
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/b.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/baby.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/baby_bottle.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/baby_chick.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/baby_symbol.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/back.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/baggage_claim.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/balloon.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/ballot_box_with_check.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bamboo.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/banana.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bangbang.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bank.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bar_chart.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/barber.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/baseball.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/basketball.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bath.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bathtub.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/battery.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bear.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bee.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/beer.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/beers.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/beetle.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/beginner.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bell.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bento.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bicyclist.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bike.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bikini.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bird.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/birthday.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_circle.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_joker.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_large_square.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_medium_small_square.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_medium_square.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_nib.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_small_square.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/black_square_button.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/blossom.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/blowfish.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/blue_book.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/blue_car.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/blue_heart.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/blush.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/boar.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/boat.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bomb.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/book.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bookmark.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bookmark_tabs.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/books.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/boom.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/boot.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bouquet.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bow.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bowling.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bowtie.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/boy.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bread.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bride_with_veil.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bridge_at_night.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/briefcase.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/broken_heart.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bug.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bulb.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bullettrain_front.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bullettrain_side.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bus.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/busstop.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/bust_in_silhouette.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/emoji/busts_in_silhouette.png
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/git/bin
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/git/libexec/git-core/mergetools/bc
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/git/libexec/git-core/mergetools/bc3
+/Users/user/Library/Application Support/com.github.GitHub.ShipIt/update.pPeNNzn/GitHub Desktop.app/Contents/Resources/git-lfs/bin
+/Users/user/Library/Application Support/GitHub for Mac/tutorial/.git/branches
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/aapocclcgogkmnckokdopfmhonfmgoek/0.9_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/aohghmighlieiainnegkcijnfilokake/0.9_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/apdfllckaahabafndbhieahigkjlhalf/14.0_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/bepbmhgboaologfdajaanbcjmnhjmhfn
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/bepbmhgboaologfdajaanbcjmnhjmhfn/0.1.1.5023_0/background.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/blpcfgokakmgnkcojhhkbfbldkacnbeo
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/blpcfgokakmgnkcojhhkbfbldkacnbeo/4.2.8_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/_locales/bn
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/block.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/block.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/ext/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/skin/background-main.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/skin/background-share.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/cfhdojbkjhnklbpkdaibdccddilifddb/1.9.3_0/skin/background.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/coobgpohoikkiipiblmjeljniedjpjpf/0.0.0.30_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/background.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/base64.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/blocked.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/blocked.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/blocked_ext.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/blocked_ext.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/blocked_pass.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/blocked_pass.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/bulk_notify.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/back.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/bg.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/black.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/blocksite2.jpg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/blocksite350.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/border.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/bubble.jpg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/button.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/button_bg.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/button_left.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/button_right.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/cleditor/buttons.gif
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/dark_rounded/btnNext.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/dark_rounded/btnPrevious.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/dark_square/btnNext.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/dark_square/btnPrevious.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/facebook/btnNext.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/facebook/btnPrevious.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/light_rounded/btnNext.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/light_rounded/btnPrevious.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/light_square/btnNext.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/prettyPhoto/light_square/btnPrevious.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/uniform/bg-input-focus.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/img/uniform/bg-input.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/js/bootstrap-datetimepicker.min.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/js/bootstrap.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/js/buy.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/js/layouts/bottom.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/style/bootstrap-datetimepicker.min.css
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/style/bootstrap-responsive.css
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/style/bootstrap-toggle-buttons.css
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/eiimnmioipafcokbfikbljfdeojpcgbh/3.1.11_0/style/bootstrap.css
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fahmaaghhglfmonjliepjlchgpgfmobi/1.288.0_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fahmaaghhglfmonjliepjlchgpgfmobi/1.288.0_0/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/felcaaldnbdncclmgdcncolpebgiejap/1.1_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/background.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/beautify
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/beautify/beautify-css.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/codemirror/addon/fold/brace-fold.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/codemirror/theme/base16-dark.css
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/codemirror/theme/base16-light.css
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/fjnbnpbmkenffdnngjfgmeleoegfcffe/1.4.0_0/codemirror/theme/blackboard.css
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.0_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.0_0/_locales/bn
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/babel.chrome.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/background.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/images/background.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/images/background_texture.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/images/button-icons.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/js/background
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/js/background/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/js/overlay/app/backend.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/js/overlay/components/blank-input-view.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/js/vendor/backbone-min.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/js/vendor/backbone-min.map
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/ghnicdmecgkdbledgnmbbnddfnjjgegp/1.0.6_0/src/js/vendor/backbone.marionette.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/icncamkooinmbehmkeilcccmoljfkdhp/1.2.2_0/images/basicSprite.png
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/icncamkooinmbehmkeilcccmoljfkdhp/1.2.2_0/src/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/inobiceghmpkaklcknpniboilbjmlald/7.7.1_0/bridge.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/jhknlonaankphkkbnmjdlpehkinifeeg/0.8_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/mgjjeipcdnnjhgodgjpfkffcejoljijf/0.7.9_0/background.html
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/mgjjeipcdnnjhgodgjpfkffcejoljijf/0.7.9_0/background.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/mgjjeipcdnnjhgodgjpfkffcejoljijf/0.7.9_0/background_util.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/mgjjeipcdnnjhgodgjpfkffcejoljijf/0.7.9_0/browser_actions.js
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/mkaakpdehdafacodkgkpghoibnmamcme/1.1_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/nmmhkkegccagdldgiimedpiccmgmieda/0.1.2.0_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Default/Extensions/pjkljhegncpnkpknbcohdijeoejaedia/8.1_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/aapocclcgogkmnckokdopfmhonfmgoek/0.9_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/aohghmighlieiainnegkcijnfilokake/0.9_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/apdfllckaahabafndbhieahigkjlhalf/14.1_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/blpcfgokakmgnkcojhhkbfbldkacnbeo
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/blpcfgokakmgnkcojhhkbfbldkacnbeo/4.2.8_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/coobgpohoikkiipiblmjeljniedjpjpf/0.0.0.60_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/felcaaldnbdncclmgdcncolpebgiejap/1.1_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.1_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.1_0/_locales/bn
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/nmmhkkegccagdldgiimedpiccmgmieda/0.1.2.0_0/_locales/bg
+/Users/user/Library/Application Support/Google/Chrome/Profile 2/Extensions/pjkljhegncpnkpknbcohdijeoejaedia/8.1_0/_locales/bg
+/Users/user/Library/Application Support/Skype/rebecca.piper13/bistats.db
+/Users/user/Library/Application Support/Skype/rebecca.piper13/bistats.db-journal
+/Users/user/Library/Application Support/Skype/rebecca.piper13/bistats.lock
+/Users/user/Library/Application Support/Slack/b2.mp3
+/Users/user/Library/Application Support/Slack/been_tree.mp3
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Java/break.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/LaTeX/begin{}-end{}.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/OCaml/begin.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/before_create.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/before_destroy.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/before_save.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/before_update.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/before_validation.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/before_validation_on_create.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/before_validation_on_update.sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Rails/belongs_to-(bt).sublime-snippet
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Theme - Default/blue_highlight.png
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Theme - Default/blue_highlight@2x.png
+/Users/user/Library/Application Support/Sublime Text 2/Packages/Theme - Default/bookmark.png
+/Users/user/Library/com.apple.nsurlsessiond/bundles.plist
+/Users/user/Library/Containers/com.aspyr.thesimslifestories.appstore/Data/Library/Application Support/Electronic Arts/The Sims Life Stories/Movies/Games/bus
+/Users/user/Library/Containers/com.aspyr.thesimslifestories.appstore/Data/Library/Application Support/Electronic Arts/The Sims Life Stories/Music/build
+/Users/user/Library/Containers/com.aspyr.thesimslifestories.appstore/Data/Library/Application Support/Electronic Arts/The Sims Life Stories/Music/buy
+users-MacBook-Pro-147:Text_Files user$ env
+rvm_bin_path=/Users/user/.rvm/bin
+TERM_PROGRAM=Apple_Terminal
+GEM_HOME=/Users/user/.rvm/gems/ruby-2.2.1
+SHELL=/bin/bash
+TERM=xterm-256color
+IRBRC=/Users/user/.rvm/rubies/ruby-2.2.1/.irbrc
+TMPDIR=/var/folders/bx/rffmkv6x4txggy1pf106c1w40000gn/T/
+Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.vFt8Xyqtbz/Render
+TERM_PROGRAM_VERSION=361.1
+OLDPWD=/Users/user/Desktop/Challenge_1
+MY_RUBY_HOME=/Users/user/.rvm/rubies/ruby-2.2.1
+TERM_SESSION_ID=D0A44CBF-127E-4758-AE89-2D5EB3576400
+USER=user
+_system_type=Darwin
+rvm_path=/Users/user/.rvm
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.56IL5y3L5Q/Listeners
+__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+rvm_prefix=/Users/user
+PATH=/Users/user/.rvm/gems/ruby-2.2.1/bin:/Users/user/.rvm/gems/ruby-2.2.1@global/bin:/Users/user/.rvm/rubies/ruby-2.2.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/user/.rvm/bin
+PWD=/Users/user/Desktop/Challenge_1/Text_Files
+LANG=en_GB.UTF-8
+_system_arch=x86_64
+XPC_FLAGS=0x0
+_system_version=10.11
+XPC_SERVICE_NAME=0
+rvm_version=1.26.11 (latest)
+SHLVL=1
+HOME=/Users/user
+LOGNAME=user
+GEM_PATH=/Users/user/.rvm/gems/ruby-2.2.1:/Users/user/.rvm/gems/ruby-2.2.1@global
+RUBY_VERSION=ruby-2.2.1
+_system_name=OSX
+SEASON=winter
+_=/usr/bin/env
+users-MacBook-Pro-147:Text_Files user$ echo $SEASON
+winter
+users-MacBook-Pro-147:Text_Files user$ export DAY=wednesday
+users-MacBook-Pro-147:Text_Files user$ echo $DAY
+wednesday
+users-MacBook-Pro-147:Text_Files user$ echo "export DAY=wednesday" >> ~/.bash_profile
+users-MacBook-Pro-147:Text_Files user$ $DAY
+-bash: wednesday: command not found
+users-MacBook-Pro-147:Text_Files user$ echo $DAY
+wednesday
+users-MacBook-Pro-147:Text_Files user$ ls -l
+total 40
+-rw-r--r--@ 1 user  staff  6654  9 Dec 17:50 Learn_to_code
+-rw-r--r--@ 1 user  staff    30 25 Sep  2013 Less_Text.txt
+-rw-r--r--@ 1 user  staff  6654 25 Sep  2013 More_Text.txt
+-rw-r--r--  1 user  staff     0  9 Dec 17:52 blank
+users-MacBook-Pro-147:Text_Files user$ chmod g+w More_Text.txt
+users-MacBook-Pro-147:Text_Files user$ ls -l
+total 40
+-rw-r--r--@ 1 user  staff  6654  9 Dec 17:50 Learn_to_code
+-rw-r--r--@ 1 user  staff    30 25 Sep  2013 Less_Text.txt
+-rw-rw-r--@ 1 user  staff  6654 25 Sep  2013 More_Text.txt
+-rw-r--r--  1 user  staff     0  9 Dec 17:52 blank
+users-MacBook-Pro-147:Text_Files user$ chmod o-r More_Text.txt
+users-MacBook-Pro-147:Text_Files user$ ls -l
+total 40
+-rw-r--r--@ 1 user  staff  6654  9 Dec 17:50 Learn_to_code
+-rw-r--r--@ 1 user  staff    30 25 Sep  2013 Less_Text.txt
+-rw-rw----@ 1 user  staff  6654 25 Sep  2013 More_Text.txt
+-rw-r--r--  1 user  staff     0  9 Dec 17:52 blank
+users-MacBook-Pro-147:Text_Files user$ cd ..
+users-MacBook-Pro-147:Challenge_1 user$ mkdir No_Change
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Foo		No_Change	Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ ls -l
+total 0
+drwxr-xr-x  3 user  staff  102  9 Dec 17:47 Foo
+drwxr-xr-x  2 user  staff   68  9 Dec 18:13 No_Change
+drwxr-xr-x@ 7 user  staff  238  9 Dec 17:52 Text_Files
+users-MacBook-Pro-147:Challenge_1 user$ chmod a-x No_Change
+users-MacBook-Pro-147:Challenge_1 user$ cd No_Change
+-bash: cd: No_Change: Permission denied
+users-MacBook-Pro-147:Challenge_1 user$ echo "hello, world!"
+-bash: !": event not found
+users-MacBook-Pro-147:Challenge_1 user$ echo hello, world!
+hello, world!
+users-MacBook-Pro-147:Challenge_1 user$ touch hello.rb
+users-MacBook-Pro-147:Challenge_1 user$ irb
+h2.2.1 :001 > exit
+users-MacBook-Pro-147:Challenge_1 user$ cat > hello.rb
+#!/usr/bin/env ruby
+puts "hello,world!"
+^C
+users-MacBook-Pro-147:Challenge_1 user$ ruby hello.rb
+hello,world!
+users-MacBook-Pro-147:Challenge_1 user$ hello.rb
+-bash: hello.rb: command not found
+users-MacBook-Pro-147:Challenge_1 user$ ls
+Foo		No_Change	Text_Files	hello.rb
+users-MacBook-Pro-147:Challenge_1 user$ ./hello.rb
+-bash: ./hello.rb: Permission denied
+users-MacBook-Pro-147:Challenge_1 user$ ls -l
+total 8
+drwxr-xr-x  3 user  staff  102  9 Dec 17:47 Foo
+drw-r--r--  2 user  staff   68  9 Dec 18:13 No_Change
+drwxr-xr-x@ 7 user  staff  238  9 Dec 17:52 Text_Files
+-rw-r--r--  1 user  staff   40  9 Dec 18:20 hello.rb
+users-MacBook-Pro-147:Challenge_1 user$ chmod u+x hello.rb
+users-MacBook-Pro-147:Challenge_1 user$ ls -l
+total 8
+drwxr-xr-x  3 user  staff  102  9 Dec 17:47 Foo
+drw-r--r--  2 user  staff   68  9 Dec 18:13 No_Change
+drwxr-xr-x@ 7 user  staff  238  9 Dec 17:52 Text_Files
+-rwxr--r--  1 user  staff   40  9 Dec 18:20 hello.rb
+users-MacBook-Pro-147:Challenge_1 user$ hello.rb
+-bash: hello.rb: command not found
+users-MacBook-Pro-147:Challenge_1 user$ ./hello.rb
+hello,world!
+users-MacBook-Pro-147:Challenge_1 user$ ps x | grep "Google Chrome" | wc > chrome.list
